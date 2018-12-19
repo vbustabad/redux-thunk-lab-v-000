@@ -27,7 +27,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
-  return {cats: state.cats}
+  return { catPics: state.cats.pictures }
 }
 
 function mapDispatchToProps(dispatch){

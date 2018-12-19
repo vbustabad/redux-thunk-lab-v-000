@@ -5,7 +5,7 @@ class CatList extends Component {
 
   render() {
 
-    let cats = this.props.catPics.map(catPic => <img key={catPic.id}>{catPic}</img>);
+    let cats = this.props.catPics.map(catPic => <img key={catPic.id} src={catPic.url} alt="cat" />);
 
     return (
       <div>

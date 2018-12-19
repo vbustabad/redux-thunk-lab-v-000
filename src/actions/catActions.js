@@ -1,7 +1,13 @@
 export function fetchCats() {
-    const cats = fetch('http://localhost:4000/db');
-    return {
-      type: 'FETCH_CATS',
-      cats
-    };
+    return dispatch => {
+        dispatch({type: 'LOADING_CATS'})
+    return fetch('http://localhost:4000/db').then(response => {
+        return response.json()
+        }).then(cats => {
+        return dispatch({
+          type: 'FETCH_CATS',
+          catPics
+        })
+      });
+    }
 };
